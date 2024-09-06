@@ -1,0 +1,253 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root{
+    font-size: 62.5%;
+
+    --brand-primary: hsl(195, 46%, 40%);
+    --title-primary: hsl(240, 6%, 13%);
+    --text-primary: hsl(240, 5%, 7%);
+
+}
+
+html,
+body,
+input {
+  font-family: "Mulish", sans-serif;
+}
+
+img {
+    width: 100%;
+    height: auto;
+
+    display: block;
+    transition: all 300ms;
+}
+
+img:hover {
+    scale: 1.02
+}
+
+button {
+    all: unset;
+    transition: all 300ms;
+}
+
+button:hover {
+    transform: scale(1.1) rotate(10deg);
+}
+
+.container{
+    padding-inline: 2rem;
+    max-width: calc(38.4rem + (2rem * 2));
+    margin-inline: auto;
+}
+
+header{
+    background: var(--brand-primary);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 2.6rem;
+    padding: 1.6rem 2.8rem;
+    
+}
+
+header img{
+    height: 4.2rem;
+    width: 4.2rem;
+    border-radius: 50%;
+}
+
+header a{
+    line-height: 0;
+}
+
+header form input{
+    min-width: 24rem;
+
+    background: rgb(255 255 255 / 0.2);
+    color: white;
+
+    border: none;
+    border-radius: .4rem;
+    color: white;
+    padding: 1.2rem  1.4rem;
+    
+    font-weight: 600;
+    line-height: 100%;
+}
+
+header form input:focus{
+    outline: 0;
+}
+
+header form input::placeholder{
+    color: white;
+}
+
+main img{
+    border-radius: 5px;
+    width: 100%;
+    height: auto;
+}
+
+main .buttons{
+    display: flex;
+    gap: 1.2rem ;
+}
+
+.buttons img{
+    height: 4rem;
+    width: 4rem;
+}
+
+main h1{
+    color: var(--title-primary);
+    font-weight: bold;
+    font-size: 2.4rem;
+
+    margin-block: 3rem .8rem;
+}
+
+main p{
+    font-weight: 400;
+    font-size: 1.6rem;
+    line-height: 160%;
+    color: var(--text-primary);
+
+    margin-block: 3.1rem 3.4rem;
+}
+
+aside h2{
+    font-weight: bold;
+    font-size: 2.4rem;
+    margin-bottom: 3.2rem;
+}
+
+aside section{
+    display: flex;
+    flex-direction: column;
+    gap: 3.2rem;
+}
+
+aside section article{
+    display: flex;
+    gap: 1.6rem;
+}
+
+article img{
+    width: 15rem;
+    height: 8.4rem;
+}
+
+article h3{
+    padding-top: 0;
+    font-weight: bold;
+    font-size: 1.8rem;
+    
+}
+
+article p{
+    font-weight: 400;
+    font-size: 1.4rem;
+    line-height: 160%;
+    color: var(--text-primary);
+}
+
+footer{
+    width: 100%;
+    
+    margin-top: 3.9rem;
+
+    text-align: center;
+}
+
+footer p{
+    background:var(--brand-primary);
+    color: white;
+    
+    padding-block: 2.6rem;
+    
+    font-size: 1.6rem;
+    line-height: 100%;
+    font-weight: 600;
+    
+}
+
+@media (width > 80rem) {
+    .app{
+        display: grid;
+
+        grid-template-areas:
+        'header header'
+        'main aside'
+        'footer footer';
+
+        gap: 4rem 3.2rem;
+
+    }
+
+    .container {
+        max-width: initial;
+        padding: initial;
+        margin: initial;
+    }
+
+    header{
+        grid-area: header;
+        width: 100%;
+    }
+
+    header form input{
+        width: 108rem;
+    }
+
+    main{
+        grid-area: main;
+    }
+
+    main.container {
+        max-width: 80rem;
+        margin-left: auto;
+    }
+
+    aside{
+        grid-area: aside;
+    }
+
+    aside.container {
+        max-width: 38.4rem;
+    }
+
+    footer{
+        grid-area: footer;
+    }
+
+}
+
+header {
+    animation: fromTop 600ms 100ms backwards;
+}
+
+main,
+aside {
+    animation: fromBottom 800ms 100ms backwards;
+}
+
+@keyframes fromTop {
+    from {
+        opacity: 0;
+        transform: translateY(-100%);
+    }
+}
+
+@keyframes fromBottom {
+    from {
+        opacity: 0;
+        transform: translateY(100px);
+    }
+}
